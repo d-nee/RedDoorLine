@@ -1,15 +1,12 @@
 # RedDoorLine
 Website &amp; Image Storage for RedDoorLine.com
 
-When Red Door Cafe on Caltech's campus is open, this project takes a picture every 2 minutes
-so students can efficiently take time off work to eat.
+From 5pm to 2am, this project takes a picture of Caltech's Red Door Cafe every minute.
 
-Honestly pretty jank. Using github pushes to update the photo. Delay ~45 seconds.
+This allows students to efficiently take time off work to eat.
 
-Commits wiped every day to prevent long term data collection. Still stored locally.
+Hosted on AWS.
 
 Operated off a Raspberry Pi4 with a Camera Module V2 in Page 142.
 
-Contact: dnee@caltech.edu
-
-Thanks to Thomas Barrett and Recruit Mike Scornavacca (both from NJ) for html/css assistance.
+Contact: dnee@caltech.edu.
