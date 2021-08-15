@@ -18,9 +18,11 @@
 **4. How secure/private is the website?**
 
     I have setup a firewall which will only allow access if you are on the Caltech secure wifi network.
-    Images are stored as I may implement some ML processes to categorize the line length.
+    Images are stored *only locally* as I may implement some ML processes to categorize the line length.
 
 **5. Why and how did you do this?**
 
     I can look out the window and check the line - thought it would be nice to share.
     Runs on a Raspberry Pi 4 and camera. More than happy to bore with more technical details just shoot me an email.
+
+Contact: [mailto:dnee@caltech.edu](dnee@caltech.edu)
