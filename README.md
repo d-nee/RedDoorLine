@@ -9,4 +9,6 @@ Hosted on AWS. A WAP restricts access to campus IP addresses.
 
 Operated off a Raspberry Pi4 with a Camera Module V2 in Page 142.
 
+[FAQ](https://github.com/d-nee/RedDoorLine/blob/master/FAQ.md)
+
 Contact: [dnee@caltech.edu](mailto:dnee@caltech.edu)
