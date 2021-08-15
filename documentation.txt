@@ -1,0 +1,7 @@
+WAF Configuration:
+
+Create a Web ACL (access control list) in AWS WAF.
+
+Associate to Cloudfront distribution in that distribution's settings.
+
+Continuous Deployment from this repo can be setup with AWS CodePipeline.
