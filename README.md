@@ -1,5 +1,5 @@
 # RedDoorLine
-Website &amp; Image Storage for RedDoorLine.com
+Repository for RedDoorLine.com
 
 From 5pm to 2am, this project takes a picture of Caltech's Red Door Cafe every minute.
 
