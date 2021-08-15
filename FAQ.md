@@ -4,9 +4,9 @@
 
     The site is active typically from 5pm-2am provided Red Door is open. Before 5pm glare is excessive.
 
-**2. Why is the image not updating?***
+**2. Why is the image not updating?**
 
-    Likely due to caching by your browser. If on a computer use Ctrl/Cmd+Shift+R to force refresh the cache.
+    Likely due to caching by your browser. If on a computer use (Ctrl/Cmd)+Shift+R to force refresh the cache.
     If on mobile or the previous step is not working, open an incognito tab/window to access the site.
     If neither of these solve your problem along with a history/cache clear, contact me.
 
