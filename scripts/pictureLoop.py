@@ -2,6 +2,8 @@ import os
 import time
 import datetime
 
+IMG_PATH = '~/RedDoorLine/images/current.png'
+
 # All time in seconds
 TIME_BETWEEN_PICTURES = 50
 TIME_BETWEEN_CLOSED_CHECK = 600
@@ -23,9 +25,10 @@ while True:
         TIME_BETWEEN = TIME_BETWEEN_PICTURES
         nightClose = False
         try:
-            os.system('raspistill -o ~/RedDoorLine/images/current.png -rot 90 -ex snow -h 808 -roi .5,.2,.333,1 -br 55')
-            os.system(f'cp ~/RedDoorLine/images/current.png ~/RedDoorPics/{dateString}.png')
-            os.system('aws s3 cp ~/RedDoorLine/images/current.png s3://www.reddoorline.com/images/current.png')
+            os.system(f'raspistill -o {IMG_PATH} -vf -hf -ex snow -roi .3,.5,.7,.25')
+            os.system(f'convert -pointsize 100 -fill yellow -draw "text 0,100 \'$(date)\'" {IMG_PATH} {IMG_PATH}')
+            os.system(f'cp {IMG_PATH} ~/RedDoorPics/{dateString}.png')
+            os.system(f'aws s3 cp {IMG_PATH} s3://www.reddoorline.com/images/current.png')
         except Exception as e:
             print(f'Error: {e}')
             exit(1)
