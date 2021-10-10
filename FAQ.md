@@ -12,13 +12,13 @@
 
 **3. Why am I stuck on the denied screen?**
 
-    Check your network. If you're on Caltech secure try completely quitting your browser and reopening.
+    Check your network. If you're on Caltech WiFi try completely quitting your browser and reopening.
     If still unable, even in an incognito window, reach out to me as I probably need to add your IP.
 
 **4. How secure/private is the website?**
 
-    I have setup a firewall which will only allow access if you are on the Caltech secure wifi network.
-    Images are stored *only locally* as I may implement some ML processes to categorize the line length.
+    I have setup a firewall which will only allow access if you are on the Caltech network.
+    Images may be stored *only locally* as I can see myself implementing some ML processes to categorize the line length.
 
 **5. Why and how did you do this?**
 
