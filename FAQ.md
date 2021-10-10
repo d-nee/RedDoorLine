@@ -12,7 +12,7 @@
 
 **3. Why am I stuck on the denied screen?**
 
-    Check your network. If you're on Caltech WiFi try completely quitting your browser and reopening.
+    Check your network. If you're on the Caltech network try completely quitting your browser and reopening.
     If still unable, even in an incognito window, reach out to me as I probably need to add your IP.
 
 **4. How secure/private is the website?**
