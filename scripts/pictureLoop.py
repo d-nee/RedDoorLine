@@ -23,9 +23,8 @@ while True:
         TIME_BETWEEN = TIME_BETWEEN_PICTURES
         nightClose = False
         try:
-            os.system('rm ~/RedDoorLine/images/line/*')
-            os.system(f'raspistill -o ~/RedDoorLine/images/current.png' + \
-                      f' -rot 90 -ex snow -h 808 -roi .5,.2,.333,1 -br 55')
+            os.system('raspistill -o ~/RedDoorLine/images/current.png -rot 90 -ex snow -h 808 -roi .5,.2,.333,1 -br 55')
+            os.system(f'cp ~/RedDoorLine/images/current.png ~/RedDoorPics/{dateString}.png')
             os.system('aws s3 cp ~/RedDoorLine/images/current.png s3://www.reddoorline.com/images/current.png')
         except Exception as e:
             print(f'Error: {e}')
