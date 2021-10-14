@@ -12,7 +12,7 @@ print(f'Current Time: {dateString}')
 try:
     os.system(f'raspistill -n -o {IMG_PATH} -vf -hf -ex snow -roi .25,.5,.7,.25')
     os.system(f'convert {IMG_PATH} -resize 800x300! {IMG_PATH}')
-    os.system(f'convert -pointsize 10 -fill yellow -draw "text 0,10 \'{dateString}\'" {IMG_PATH} {IMG_PATH}')
+    os.system(f'convert -pointsize 20 -fill yellow -draw "text 0,20 \'{dateString}\'" {IMG_PATH} {IMG_PATH}')
     os.system(f'cp {IMG_PATH} /media/pi/DNEE/test/{dateString}.png')
     os.system(f'aws s3 cp {IMG_PATH} s3://www.reddoorline.com/images/current.png')
 except Exception as e:
