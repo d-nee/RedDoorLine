@@ -4,6 +4,10 @@ import datetime
 
 IMG_PATH = '~/RedDoorLine/images/current.png'
 
+# Pixels of Height, like 1080p, but now ___p
+# Ideally divisible by 3
+RES = 150
+
 # All time in seconds
 TIME_BETWEEN_PICTURES = 50
 TIME_BETWEEN_CLOSED_CHECK = 600
@@ -26,8 +30,8 @@ while True:
         nightClose = False
         try:
             os.system(f'raspistill -n -o {IMG_PATH} -vf -hf -ex snow -roi .25,.5,.7,.25')
-            os.system(f'convert {IMG_PATH} -resize 400x150! {IMG_PATH}')
-            os.system(f'convert -pointsize 10 -fill yellow -draw "text 0,10 \'{dateString}\'" {IMG_PATH} {IMG_PATH}')
+            os.system(f'convert {IMG_PATH} -resize {RES*8//3}x{RES}! {IMG_PATH}')
+            os.system(f'convert -pointsize {RES//15} -fill yellow -draw "text 0,{RES//15} \'{dateString}\'" {IMG_PATH} {IMG_PATH}')
             os.system(f'cp {IMG_PATH} /media/pi/DNEE/{dateString}.png')
             os.system(f'aws s3 cp {IMG_PATH} s3://www.reddoorline.com/images/current.png')
         except Exception as e:
