@@ -19,15 +19,16 @@ TIME_BETWEEN = TIME_BETWEEN_PICTURES
 while True:
     currDatetime = datetime.datetime.now()
     now = currDatetime.timetuple()
-    dateString = f'{now[0]}-{now[1]}-{now[2]}-{now[3]}:{now[4]:02}:{now[5]:02}'
+    dateString = f'{now[0]}-{now[1]:02}-{now[2]:02}_{now[3]:02}-{now[4]:02}-{now[5]:02}'
     print(f'Current Time: {dateString}')
     if now[3] < HOUR_CLOSE or now[3] >= HOUR_OPEN:
         TIME_BETWEEN = TIME_BETWEEN_PICTURES
         nightClose = False
         try:
-            os.system(f'raspistill -n -o {IMG_PATH} -vf -hf -ex snow -roi .3,.5,.7,.25')
-            os.system(f'convert -pointsize 100 -fill yellow -draw "text 0,100 \'$(date)\'" {IMG_PATH} {IMG_PATH}')
-            os.system(f'cp {IMG_PATH} ~/RedDoorPics/{dateString}.png')
+            os.system(f'raspistill -n -o {IMG_PATH} -vf -hf -ex snow -roi .25,.5,.7,.25')
+            os.system(f'convert {IMG_PATH} -resize 800x300! {IMG_PATH}')
+            os.system(f'convert -pointsize 100 -fill yellow -draw "text 0,100 \'{dateString}\'" {IMG_PATH} {IMG_PATH}')
+            os.system(f'cp {IMG_PATH} /media/pi/DNEE/{dateString}.png')
             os.system(f'aws s3 cp {IMG_PATH} s3://www.reddoorline.com/images/current.png')
         except Exception as e:
             print(f'Error: {e}')
