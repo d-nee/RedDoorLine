@@ -4,7 +4,7 @@ import datetime
 
 IMG_PATH = '~/RedDoorLine/images/current.png'
 
-RES = 150
+RES = 225
 
 currDatetime = datetime.datetime.now()
 now = currDatetime.timetuple()
