@@ -6,7 +6,7 @@ IMG_PATH = '~/RedDoorLine/images/current.png'
 
 # Pixels of Height, like 1080p, but now ___p
 # Ideally divisible by 3
-RES = 150
+RES = 225
 
 # All time in seconds
 TIME_BETWEEN_PICTURES = 50
