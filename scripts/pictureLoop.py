@@ -3,6 +3,7 @@ import time
 import datetime
 
 IMG_PATH = '~/RedDoorLine/images/current.png'
+LOG_PATH = '~/RedDoorLine/log.txt'
 
 # Pixels of Height, like 1080p, but now ___p
 # Ideally divisible by 3
@@ -34,6 +35,7 @@ def run():
             os.system(f'convert {IMG_PATH} -resize {RES*8//3}x{RES}! {IMG_PATH}')
             os.system(f'convert -pointsize {RES//15} -fill yellow -draw "text 0,{RES//15} \'{dateString}\'" {IMG_PATH} {IMG_PATH}')
             os.system(f'cp {IMG_PATH} /media/pi/DNEE/{dateString}.png')
+            os.system(f'echo {dateString} >> {LOG_PATH}')
             os.system(f'aws s3 cp {IMG_PATH} s3://www.reddoorline.com/images/current.png')
         except Exception as e:
             print(f'Error: {e}')
