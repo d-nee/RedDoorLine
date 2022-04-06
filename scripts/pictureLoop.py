@@ -20,11 +20,11 @@ nightClose = False
 
 TIME_BETWEEN = TIME_BETWEEN_PICTURES
 
-while True:
+def run():
     currDatetime = datetime.datetime.now()
     now = currDatetime.timetuple()
     dateString = f'{now[0]}-{now[1]:02}-{now[2]:02}_{now[3]:02}-{now[4]:02}-{now[5]:02}'
-    print(f'Current Time: {dateString}')
+    # print(f'Current Time: {dateString}')
     if now[3] < HOUR_CLOSE or now[3] >= HOUR_OPEN:
         TIME_BETWEEN = TIME_BETWEEN_PICTURES
         nightClose = False
@@ -41,5 +41,9 @@ while True:
         os.system('aws s3 cp s3://www.reddoorline.com/images/status/closed.png s3://www.reddoorline.com/images/current.png')
         TIME_BETWEEN = TIME_BETWEEN_CLOSED_CHECK
         nightClose = True
-    print(f'Pausing for {TIME_BETWEEN} seconds')
+    # print(f'Pausing for {TIME_BETWEEN} seconds')
     time.sleep(TIME_BETWEEN)
+
+if __name__ == '__main__':
+    while True:
+        run()
