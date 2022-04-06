@@ -21,6 +21,7 @@ nightClose = False
 TIME_BETWEEN = TIME_BETWEEN_PICTURES
 
 def run():
+    global nightClose
     currDatetime = datetime.datetime.now()
     now = currDatetime.timetuple()
     dateString = f'{now[0]}-{now[1]:02}-{now[2]:02}_{now[3]:02}-{now[4]:02}-{now[5]:02}'
