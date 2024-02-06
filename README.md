@@ -11,4 +11,4 @@ Operated off a Raspberry Pi4 with a Camera Module V2 in Page 144.
 
 [FAQ](https://github.com/d-nee/RedDoorLine/blob/master/FAQ.md)
 
-Contact: [dnee@caltech.edu](mailto:dnee@caltech.edu)
+Contact: [shu2@caltech.edu](mailto:shu2@caltech.edu)
