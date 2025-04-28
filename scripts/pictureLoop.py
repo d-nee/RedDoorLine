@@ -35,7 +35,7 @@ def run():
             os.system(f'raspistill -n -o {IMG_PATH} -vf -hf -ex snow -roi .25,.5,.7,.25')
             os.system(f'convert {IMG_PATH} -resize {RES*8//3}x{RES}! {IMG_PATH}')
             os.system(f'convert -pointsize {RES//15} -fill yellow -draw "text 0,{RES//15} \'{dateString}\'" {IMG_PATH} {IMG_PATH}')
-            os.system(f'cp {IMG_PATH} /media/pi/DNEE/{dateString}.png')
+            # os.system(f'cp {IMG_PATH} /media/pi/DNEE/{dateString}.png')
             os.system(f'echo {dateString} >> {LOG_PATH}')
             os.system(f'aws s3 cp {IMG_PATH} s3://www.reddoorline.com/images/current.png')
         except Exception as e:
